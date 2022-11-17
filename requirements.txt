@@ -18,7 +18,7 @@ httptools==0.4.0
 huggingface-hub==0.8.1
 idna==3.3
 jmespath==1.0.1
-joblib==1.1.0
+joblib==1.2.0
 jsii==1.64.0
 mangum==0.15.1
 numpy==1.23.2
