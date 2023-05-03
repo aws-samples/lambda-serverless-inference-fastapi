@@ -7,7 +7,7 @@ This github repo is accompanying an AWS Blog post. For more information, have a 
 ## Prerequisites
 
 Have Python3 installed, along with virtualenv for creating and managing virtual environments in Python.
-Install aws-cdk v2 on your system in order to be able to use the aws-cdk CLI.
+Install `aws-cdk v2` on your system in order to be able to use the aws-cdk CLI.
 Have Docker installed (and, for the deployment part, running!) on your local machine.
 
 ### Test if all necessary software is installed:
@@ -88,9 +88,9 @@ The most important part of this repository is the ```fast_api_model_serving``` d
 `model_endpoint` directory:
 - contains all the assets necessary that will make up our serverless endpoint, i.e., Dockerfile to build the Docker image that AWS Lamdba will use, as well as the lambda function code that uses FastAPI to handle inference requests and route them to the correct endpoint, and the model artifacts of the model that we want to deploy.
 
-Inside model endpoint, 
+Inside model endpoint, we have the follwing struture... 
 - `docker` directory:
-    - which specifies a Dockerfile which is used to build the image for the lambda function with all the artifacts (Lambda function code, model artifacts, ...) in the right place so that they can be used without issues.
+    - which specifies a `Dockerfile` which is used to build the image for the Lambda function with all the artifacts (Lambda function code, model artifacts, ...) in the right place so that they can be used without issues.
     - `Serving.api.tar.gz`: this is a tarball that contains all the assets from the runtime folder that are necessary for building the Docker image. More on how to create the tar.gz. file later in the next section.
 - `runtime` directory:
     - contains the code for the `serving_api` Lambda function and it’s dependencies specified in the `requirements.txt` file
@@ -147,16 +147,21 @@ This step can take around **5-10 minutes** due to building and pushing the docke
 ## Running real-time inference
 
 ### Using the API documentation in the browser
-After your `AWS CloudFormation` got deployed successfully, go to `Outputs` section and open up the endpoint url. Now our model is accessible via the endpoint url and we are ready to run real-time inference.
+After your `AWS CloudFormation` stack got deployed successfully, go to the `Outputs` section and open up the shown endpoint url. Now, our model is accessible via the endpoint url and we are ready to use it for real-time inference!
 
-1) Go to the url to see if you can see “hello world” message and go to url+/docs to see if you can see the interactive swagger UI page successfully. Notice there might be some coldstart time so you may need to wait or refresh a few times.
+1) Go to the url to see if you can see `“hello world”` message and go to `{endpoint_url}/docs` to see if you can successfully load the interactive swagger UI page. Notice that there might be some coldstart time so you may need to wait or refresh a few times.
+![Swagger UI Docs](img/swagger_ui_docs.png)
 
-2) Once login to the landing page of FastAPI swagger UI page, you will be able to execute via the root `/` or via `/question`. From `/`, you could try it out and execute the API and get the `“hello world”` message. 
-From `/question`, you could try it out and execute the API and run ML inference on the model we deployed for question and answering case. Here is one example.
+
+2) Once login to the landing page of FastAPI swagger UI page, you will be able to execute your endpoint via the root `/` or via the `/question` resources. From `/`, you could try it out and execute the API and get the `“hello world”` message. 
+From `/question`, you can try it out and execute the API and run ML inference on the model we deployed for the question answering case. Here is one example.
 
 The question is ```What is the color of my car now?``` and the context is ```My car used to be blue but I painted red.```
+![Question Answering Input Example](img/question_answering_input_example.png)
 
-Once you click on Execute, based on the given context, the model will answer the question with response as below.
+Once you click on `Execute`, based on the given context, the model will answer the question with response as below.
+![Model Response Example](model_response_example.png)
+
 
 In the response body, you will be able to see the answer with the confidence score the model gives. You could also play around with other examples or embed the API in your existing application.
 
