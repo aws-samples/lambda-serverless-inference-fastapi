@@ -14,3 +14,6 @@ model_endpoint/docker_assets/*
 model_endpoint/runtime/serving_api/custom_lambda_utils/model_artifacts/*
 *.zip
 *.tar.gz
+
+# ignore MacOS file system stuff
+.DS_Store

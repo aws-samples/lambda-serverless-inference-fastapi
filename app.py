@@ -11,8 +11,10 @@ app = cdk.App()
 FastapiModelServingStack(
     app,
     "FastapiModelServingStack",
-    env=cdk.Environment(account=os.getenv('CDK_DEFAULT_ACCOUNT'),
-                        region=app.node.try_get_context("DEPLOYMENT_REGION")),
-    )
+    env=cdk.Environment(
+        account=os.getenv("CDK_DEFAULT_ACCOUNT"),
+        region=app.node.try_get_context("DEPLOYMENT_REGION"),
+    ),
+)
 
 app.synth()

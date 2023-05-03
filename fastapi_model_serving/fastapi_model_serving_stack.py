@@ -10,8 +10,8 @@ from constructs import Construct
 
 DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 
-class FastapiModelServingStack(Stack):
 
+class FastapiModelServingStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
@@ -22,17 +22,16 @@ class FastapiModelServingStack(Stack):
             architecture=_lambda.Architecture.ARM_64,
             # architecture=_lambda.Architecture.X86_64,
             code=_lambda.DockerImageCode.from_image_asset(
-                os.path.join(DIR_PATH, "..","model_endpoint", "docker")
+                os.path.join(DIR_PATH, "..", "model_endpoint", "docker")
             ),
             timeout=Duration.seconds(60),
             ephemeral_storage_size=Size.mebibytes(4096),
-            memory_size=2048
-            )
+            memory_size=2048,
+        )
 
         apigateway.LambdaRestApi(
             self,
             "docker_model_serving_endpoint",
             handler=fastapi_model_endpoint_lambda,
-            proxy=True
-            )
-        
+            proxy=True,
+        )

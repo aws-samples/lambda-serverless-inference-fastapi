@@ -31,7 +31,7 @@ shift "$((OPTIND-1))" # remove options already parsed by getops from arg list
 
 if [[ $# -lt 2 ]]; then
     echo "Illegal number of arguments."
-    echo "2 positional were expected."
+    echo "2 positional arguments were expected."
     echo "Usage: init-lambda-code.sh [OPTIONS] <COMPONENT_NAME> <PACKAGE_NAME> [OPTIONS]"
     exit 1
 fi

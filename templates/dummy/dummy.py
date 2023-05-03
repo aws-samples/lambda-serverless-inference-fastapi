@@ -8,7 +8,4 @@ logger.setLevel(logging.INFO)
 def handler(event, context):
     logger.info(event)
 
-    return {
-        'statusCode': 200,
-        'body': json.dumps('Hello from Lambda!')
-    }
+    return {"statusCode": 200, "body": json.dumps("Hello from Lambda!")}
