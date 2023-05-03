@@ -143,14 +143,6 @@ make deploy
 ```
 This step can take around 5-10 minutes due to building and pushing the docker image.
 
-### Troubleshooting
-
-#### If you are a Mac User
-Error when logging into ECR with Docker login: ```"Error saving credentials ... not implemented".``` For example,
-exited with error code 1: Error saving credentials: error storing credentials - err: exit status 1,...dial unix backend.sock: connect: connection refused
-#### Solution
-Before you can use lambda on top of Docker containers inside cdk, it might be the case that you have got to change the ```~/docker/config.json``` file. More specifically, you might have to change the ```credsStore``` parameter in ```~/.docker/config.json``` to ```osxkeychain```. That solves Amazon ECR login issues on a Mac.
-
 ## Running real-time inference
 
 ### Using the API documentation in the browser
@@ -183,3 +175,12 @@ This code snippet would output a string similar to the following:
 ```python
 '{"score":0.6947233080863953,"start":38,"end":41,"answer":"red"}'
 ```
+
+
+### Troubleshooting
+
+#### If you are a Mac User
+Error when logging into ECR with Docker login: ```"Error saving credentials ... not implemented".``` For example,
+exited with error code 1: Error saving credentials: error storing credentials - err: exit status 1,...dial unix backend.sock: connect: connection refused
+#### Solution
+Before you can use lambda on top of Docker containers inside cdk, it might be the case that you have got to change the ```~/docker/config.json``` file. More specifically, you might have to change the ```credsStore``` parameter in ```~/.docker/config.json``` to ```osxkeychain```. That solves Amazon ECR login issues on a Mac.
