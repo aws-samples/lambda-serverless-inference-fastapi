@@ -81,25 +81,29 @@ fastapi_model_serving
 │   requirements.txt
  
 ```
+
 The directory follows the recommended structure of cdk projects for Python. 
 
 The most important part of this repository is the ```fast_api_model_serving``` directory. It contains the code that will define the cdk stack and the resources that are going to be used for model serving.
 
 `model_endpoint` directory:
-•	contains all the assets necessary that will make up our serverless endpoint, i.e., Dockerfile to build the Docker image that AWS Lamdba will use, as well as the lambda function code that uses FastAPI to handle inference requests and route them to the correct endpoint, and the model artifacts of the model that we want to deploy.
-Inside model endpoint, 
-`docker` directory:
-•	which specifies a Dockerfile which is used to build the image for the lambda function with all the artifacts (Lambda function code, model artifacts, ...) in the right place so that they can be used without issues.
-•	`Serving.api.tar.gz` - this is a tarball that contains all the assets from the runtime folder that are necessary for building the Docker image. More on how to create the tar.gz. file later in the next section.
-`runtime` directory:
-•	contains the code for the `serving_api` Lambda function and it’s dependencies specified in the `requirements.txt` file
-•	as well as the `custom_lambda_utils` directory which includes an `inference` script that loads the necessary `model artifacts` so that the model can be passed to the `serving_api` that will then expose it as an endpoint
-Besides, we have `template` directory which provides you with a template of folder structure and files where you can define your customised codes and APIs following the sample we went through above.
+- contains all the assets necessary that will make up our serverless endpoint, i.e., Dockerfile to build the Docker image that AWS Lamdba will use, as well as the lambda function code that uses FastAPI to handle inference requests and route them to the correct endpoint, and the model artifacts of the model that we want to deploy.
 
-`template` directory:
-•	contains dummy code that can be used to create new lambda functions from 
-o	`dummy` contains the code that implements the structure of an ordinary AWS Lambda function using the Python runtime
-o	`api` contains the code that lambda that implements an AWS Lambda function that wraps a FastAPI endpoint around an existing API Gateway
+Inside model endpoint, 
+- `docker` directory:
+    - which specifies a Dockerfile which is used to build the image for the lambda function with all the artifacts (Lambda function code, model artifacts, ...) in the right place so that they can be used without issues.
+    - `Serving.api.tar.gz`: this is a tarball that contains all the assets from the runtime folder that are necessary for building the Docker image. More on how to create the tar.gz. file later in the next section.
+- `runtime` directory:
+    - contains the code for the `serving_api` Lambda function and it’s dependencies specified in the `requirements.txt` file
+    - as well as the `custom_lambda_utils` directory which includes an `inference` script that loads the necessary `model artifacts` so that the model can be passed to the `serving_api` that will then expose it as an endpoint
+
+
+Besides, we have the `template` directory which provides you with a template of folder structure and files where you can define your customised codes and APIs following the sample we went through above.
+
+- `template` directory:
+- contains dummy code that can be used to create new lambda functions from 
+    - `dummy` contains the code that implements the structure of an ordinary AWS Lambda function using the Python runtime
+    - `api` contains the code that lambda that implements an AWS Lambda function that wraps a FastAPI endpoint around an existing API Gateway
 
 
 ## Step-by-step walk-through: Deploying the solution
