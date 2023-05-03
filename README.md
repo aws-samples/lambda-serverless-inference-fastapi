@@ -1,8 +1,7 @@
 # Deploy a machine learning serverless inference endpoint using FastAPI, AWS Lambda and AWS Cloud Development Kit
-This github repo is accompanying an AWS Blog post. For more information, have a read of the blod post.
+This github repo is accompanying an AWS Blog post. For more information, have a read of the blog post.
 
 ## Architecture
-The architecture of the solution we are deploying in this blog post is shown below.
 ![Architecture](img/architecture.png)
 
 ## Prerequisites
@@ -107,7 +106,7 @@ Besides, we have the `template` directory which provides you with a template of 
 
 ## Step-by-step walk-through: Deploying the solution
 
-NOTE: By default, the code is going to be deployed inside the eu-west-1 region. If you want to change the region to another region of your choice, you can change the DEPLOYMENT_REGION context variable in the `cdk.json` file.
+NOTE: By default, the code is going to be deployed inside the eu-west-1 region. If you want to change the region to another region of your choice, you can change the `DEPLOYMENT_REGION` context variable in the `cdk.json` file.
 Beware, however, that the solution tries to deploy a lambda on top of the arm64 architecture, and that this feature might not be available in all regions at the time of your reading. In this case, you need to change the “architecture” parameter in the fastapi_model_serving_stack.py file, as well as the first line of the Dockerfile inside the model_endpoint > Docker directory, to host this solution on the x86 architecture.
 
 
@@ -127,12 +126,15 @@ make package_model
 Finally, the artifacts are all in-place. Now we can move over to deploying the cdk stack to your AWS account.
 
 
-4) FIRST TIME CDK USERS ONLY: Run cdk bootstrap if it is your first time deploying an AWS CDK app into an environment (account + region combination). This stack includes resources that are needed for the toolkit’s operation. For example, the stack includes an S3 bucket that is used to store templates and assets during the deployment process.
+4) ```FIRST TIME CDK USERS ONLY```: Run `cdk bootstrap` if it is your first time deploying an AWS CDK app into an environment (account + region combination). This stack includes resources that are needed for the toolkit’s operation. For example, the stack includes an S3 bucket that is used to store templates and assets during the deployment process.
+```shell
 make cdk_bootstrap
-
+```
 
 5) Since we are building docker images locally in this cdk deployment, we need to ensure that the docker daemon is running before we are going to be able to deploy this stack via the cdk CLI. To check whether or not the docker daemon is running on your system, use the following command:
+```shel
 docker ps
+```
 If you don’t get an error message, you should be good to deploy the solution. 
 
 
