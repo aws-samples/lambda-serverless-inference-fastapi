@@ -3,7 +3,7 @@ This github repo is accompanying an AWS Blog post. For more information, have a 
 
 ## Architecture
 The architecture of the solution we are deploying in this blog post is shown below.
-[Architecture](img/architecture.png)
+![Architecture](img/architecture.png)
 
 ## Prerequisites
 
