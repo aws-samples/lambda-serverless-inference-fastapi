@@ -2,7 +2,7 @@
 This github repo is accompanying an AWS Blog post. For more information, have a read of the blog post.
 
 ## Architecture
-![Architecture](img/architecture.png)
+![Architecture](docs/assets/architecture.png)
 
 ## Prerequisites
 
@@ -150,19 +150,19 @@ This step can take around **5-10 minutes** due to building and pushing the docke
 After your `AWS CloudFormation` stack got deployed successfully, go to the `Outputs` section and open up the shown endpoint url. Now, our model is accessible via the endpoint url and we are ready to use it for real-time inference!
 
 1) Go to the url to see if you can see `“hello world”` message and go to `{endpoint_url}/docs` to see if you can successfully load the interactive swagger UI page. Notice that there might be some coldstart time so you may need to wait or refresh a few times.
-![Swagger UI Docs](img/swagger_ui_docs.png)
+![Swagger UI Docs](docs/assets/swagger_ui_docs.png)
 
 
 2) Once login to the landing page of FastAPI swagger UI page, you will be able to execute your endpoint via the root `/` or via the `/question` resources. From `/`, you could try it out and execute the API and get the `“hello world”` message. 
 From `/question`, you can try it out and execute the API and run ML inference on the model we deployed for the question answering case. Here is one example.
 
 The question is ```What is the color of my car now?``` and the context is ```My car used to be blue but I painted red.```
-![Question Answering Input Example](img/question_answering_input_example.png)
+![Question Answering Input Example](docs/assets/question_answering_input_example.png)
 
 Once you click on `Execute`, based on the given context, the model will answer the question with response as below.
-![Model Response Example](img/model_response_example.png)
+![Model Response Example](docs/assets/model_response_example.png)
 
-
+g
 In the response body, you will be able to see the answer with the confidence score the model gives. You could also play around with other examples or embed the API in your existing application.
 
 ### Real-time inference via code using the `requests` module
