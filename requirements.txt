@@ -39,7 +39,7 @@ sacremoses==0.0.53
 sentencepiece==0.1.97
 six==1.16.0
 sniffio==1.2.0
-starlette==0.19.1
+starlette==0.25.0
 tokenizers==0.12.1
 tqdm==4.64.0
 transformers[torch]==4.21.1
