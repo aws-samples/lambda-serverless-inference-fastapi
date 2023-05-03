@@ -160,7 +160,7 @@ The question is ```What is the color of my car now?``` and the context is ```My 
 ![Question Answering Input Example](img/question_answering_input_example.png)
 
 Once you click on `Execute`, based on the given context, the model will answer the question with response as below.
-![Model Response Example](model_response_example.png)
+![Model Response Example](img/model_response_example.png)
 
 
 In the response body, you will be able to see the answer with the confidence score the model gives. You could also play around with other examples or embed the API in your existing application.
