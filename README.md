@@ -1,13 +1,10 @@
 # Deploy a machine learning serverless inference endpoint using FastAPI, AWS Lambda and AWS Cloud Development Kit
-
-## Introduction
-
+This github repo is accompanying an AWS Blog post. For more information, have a read of the blod post.
 
 ## Architecture
 The architecture of the solution we are deploying in this blog post is shown below.
+image.png
 
- 
-Picture: Architecture of the solution
 
 ## Prerequisites
 
@@ -175,7 +172,6 @@ This code snippet would output a string similar to the following:
 ```python
 '{"score":0.6947233080863953,"start":38,"end":41,"answer":"red"}'
 ```
-
 
 ### Troubleshooting
 
