@@ -100,8 +100,7 @@ Inside model endpoint,
 
 Besides, we have the `template` directory which provides you with a template of folder structure and files where you can define your customised codes and APIs following the sample we went through above.
 
-- `template` directory:
-- contains dummy code that can be used to create new lambda functions from 
+- `template` directory: contains dummy code that can be used to create new lambda functions from 
     - `dummy` contains the code that implements the structure of an ordinary AWS Lambda function using the Python runtime
     - `api` contains the code that lambda that implements an AWS Lambda function that wraps a FastAPI endpoint around an existing API Gateway
 
@@ -114,13 +113,13 @@ Beware, however, that the solution tries to deploy a lambda on top of the arm64 
 
 1)  First, run the following command to clone the git repository:
 git clone <LINK-TO-REPOSITORY>
-Since we would like to showcase that the solution could work with model artifacts that you train locally, we contain a sample model artifact of a pretrained DistilBERT model on the Hugging Face model hub for question answering task in the `serving_api.tar.gz` file. Hence, the downloading time can take around 3 to 5 minutes. 
+Since we would like to showcase that the solution could work with model artifacts that you train locally, we contain a sample model artifact of a pretrained DistilBERT model on the Hugging Face model hub for question answering task in the `serving_api.tar.gz` file. Hence, the downloading time can take around **3 to 5 minutes**. 
 
 2) Now, let’s setup the environment to recreate the blog post. This step will download the pretrained model that will be deployed from the huggingface model hub into the `./model_endpoint/runtime/serving_api/custom_lambda_utils/model_artifacts` directory. It will also create a virtual environment and install all dependencies that are needed. You only need to run this command once:
 ```shell 
 make prep
 ```
-This command can take around 5 minutes (depending on your internet bandwidth) because it needs to download the model artifacts.
+This command can take around **5 minutes** (depending on your internet bandwidth) because it needs to download the model artifacts.
 
 
 3) The model artifacts need to be packaged inside a .tar.gz archive that will be used inside the docker image that is built in the cdk stack. You will need to run this code whenever you make changes to the model artifacts or the API itself to always have the most up-to-date version of your serving endpoint packaged:
@@ -141,7 +140,7 @@ If you don’t get an error message, you should be good to deploy the solution.
 ```shell
 make deploy
 ```
-This step can take around 5-10 minutes due to building and pushing the docker image.
+This step can take around **5-10 minutes** due to building and pushing the docker image.
 
 ## Running real-time inference
 
