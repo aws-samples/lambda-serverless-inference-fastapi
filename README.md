@@ -161,7 +161,6 @@ The question is ```What is the color of my car now?``` and the context is ```My 
 Once you click on `Execute`, based on the given context, the model will answer the question with response as below.
 ![Model Response Example](docs/assets/model_response_example.png)
 
-g
 In the response body, you will be able to see the answer with the confidence score the model gives. You could also play around with other examples or embed the API in your existing application.
 
 ### Real-time inference via code using the `requests` module
