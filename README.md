@@ -125,7 +125,7 @@ make package_model
 Finally, the artifacts are all in-place. Now we can move over to deploying the cdk stack to your AWS account.
 
 
-4) ```FIRST TIME CDK USERS ONLY```: Run `cdk bootstrap` if it is your first time deploying an AWS CDK app into an environment (account + region combination). This stack includes resources that are needed for the toolkit’s operation. For example, the stack includes an S3 bucket that is used to store templates and assets during the deployment process.
+4) ```FIRST TIME CDK USERS ONLY```: If this is your first time deploying an AWS CDK app into an environment (account + region combination), you will need to bootstrap the environment, i.e., prepare it for use with `CDK`. This will create a stack that includes resources that are needed for the toolkit’s operation. For example, the stack includes an S3 bucket that is used to store templates and assets during the deployment process.
 ```shell
 make cdk_bootstrap
 ```
