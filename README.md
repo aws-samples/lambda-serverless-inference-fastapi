@@ -170,6 +170,10 @@ Alternatively, you can run the inference via code. Here is one example written i
 ```python
 import requests
 
+# optional header and payload vars
+headers = {}
+payload = {}
+
 url = "https://<YOUR_API_GATEWAY_ENDPOINT_ID>.execute-api.<YOUR_ENDPOINT_REGION>.amazonaws.com/prod/question?question=\"What is the color of my car now?\"&context=\"My car used to be blue but I painted red\""
 
 response = requests.request("GET", url, headers=headers, data=payload)
