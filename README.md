@@ -166,9 +166,11 @@ In the response body, you will be able to see the answer with the confidence sco
 
 ### Real-time inference via code using the `requests` module
 Alternatively, you can run the inference via code. Here is one example written in Python, using the requests library:
-import requests
+
 
 ```python
+import requests
+
 url = "https://<YOUR_API_GATEWAY_ENDPOINT_ID>.execute-api.<YOUR_ENDPOINT_REGION>.amazonaws.com/prod/question?question=\"What is the color of my car now?\"&context=\"My car used to be blue but I painted red\""
 
 response = requests.request("GET", url, headers=headers, data=payload)
