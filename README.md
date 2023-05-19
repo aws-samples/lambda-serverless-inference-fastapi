@@ -133,7 +133,7 @@ make cdk_bootstrap
 ```
 
 5) Since we are building docker images locally in this cdk deployment, we need to ensure that the docker daemon is running before we are going to be able to deploy this stack via the cdk CLI. To check whether or not the docker daemon is running on your system, use the following command:
-```shel
+```shell
 docker ps
 ```
 If you don’t get an error message, you should be good to deploy the solution. 
