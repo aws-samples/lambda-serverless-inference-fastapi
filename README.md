@@ -121,7 +121,9 @@ This command can take around **5 minutes** (depending on your internet bandwidth
 
 
 3) The model artifacts need to be packaged inside a .tar.gz archive that will be used inside the docker image that is built in the cdk stack. You will need to run this code whenever you make changes to the model artifacts or the API itself to always have the most up-to-date version of your serving endpoint packaged:
+```shell
 make package_model
+```
 Finally, the artifacts are all in-place. Now we can move over to deploying the cdk stack to your AWS account.
 
 
