@@ -110,7 +110,7 @@ Beware, however, that the solution tries to deploy a lambda on top of the arm64 
 
 
 1)  First, run the following command to clone the git repository:
-git clone <LINK-TO-REPOSITORY>
+`git clone https://github.com/aws-samples/lambda-serverless-inference-fastapi`
 Since we would like to showcase that the solution could work with model artifacts that you train locally, we contain a sample model artifact of a pretrained DistilBERT model on the Hugging Face model hub for question answering task in the `serving_api.tar.gz` file. Hence, the downloading time can take around **3 to 5 minutes**. 
 
 2) Now, let’s setup the environment to recreate the blog post. This step will download the pretrained model that will be deployed from the huggingface model hub into the `./model_endpoint/runtime/serving_api/custom_lambda_utils/model_artifacts` directory. It will also create a virtual environment and install all dependencies that are needed. You only need to run this command once:
