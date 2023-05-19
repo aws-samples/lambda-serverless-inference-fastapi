@@ -14,7 +14,7 @@ curl https://huggingface.co/distilbert-base-cased-distilled-squad/resolve/main/v
 
 
 # setup and activate virtual environment
-python3.9 -m venv .venv
+python3.8 -m venv .venv
 source .venv/bin/activate
 
 # install dependencies inside virtual environment
