@@ -10,7 +10,7 @@ package_model:
 	. .venv/bin/activate && cd ./model_endpoint/runtime/serving_api && tar czvf ../../docker/serving_api.tar.gz custom_lambda_utils requirements.txt serving_api.py
 
 cdk_bootstrap:
-	. ./venv/bin/activate && cdk bootstrap
+	. ./.venv/bin/activate && cdk bootstrap
 
 synth:
 	. .venv/bin/activate && cdk synth
