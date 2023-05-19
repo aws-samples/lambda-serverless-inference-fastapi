@@ -13,7 +13,7 @@ Have Docker installed (and, for the deployment part, running!) on your local mac
 
 AWS CLI is needed. Login to your account and select the region where you want to deploy the solution.
 
-Python3 is needed. For this blog post, we use Python3.9.
+Python3 is needed. For this solution, we use Python3.8. Make sure that the Python version you use locally is consistent with the Python version specified in the Dockerfile.
 ```shell
 python3 --version
 ```
@@ -184,6 +184,12 @@ print(response.text)
 This code snippet would output a string similar to the following:
 ```python
 '{"score":0.6947233080863953,"start":38,"end":41,"answer":"red"}'
+```
+
+### Clean up
+Inside the root directory of your repository, run the following command to clean up your created resources:
+```shell
+make destroy
 ```
 
 ### Troubleshooting
