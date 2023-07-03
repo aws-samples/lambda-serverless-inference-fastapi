@@ -19,8 +19,7 @@ class FastapiModelServingStack(Stack):
             self,
             "fastapi_model_serving_endpoint",
             function_name="fastapi_model_serving_endpoint_docker",
-            architecture=_lambda.Architecture.ARM_64,
-            # architecture=_lambda.Architecture.X86_64,
+            architecture=_lambda.Architecture.X86_64,
             code=_lambda.DockerImageCode.from_image_asset(
                 os.path.join(DIR_PATH, "..", "model_endpoint", "docker")
             ),
